@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Portables</title>
+
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+
+<!-- JQUERY -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+
+<!--TEMPLATES -->
+
+<!-- District Display -->
+<script id="district-template" type="text/underscore-template">
+	      <div class="span2">
+	        <h5><%= district_name %></h5>
+	        <p>Total classrooms: <%= classrooms %></p>
+	        <p>Portable classrooms: <%= portable_classrooms %></p>
+	      </div>
+</script>
+
+<!-- Selector -->
+<script id="selection-template" type="text/underscore-template">
+<option value="<%= id %>"><%= district_name %></option>
+</script>
+
+
+<!-- BOOTSTRAP -->
+<link rel="stylesheet" type="text/css" href="https://s3.amazonaws.com/earthfix/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="https://s3.amazonaws.com/ire-static/bootstrap-responsive.css" />
+<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+
+
+<!-- LOADING JSON ARRAY WITHIN VARIABLE -->
+<script src="data.js"></script>
+
+<!-- BACKBONE, UNDERSCORE, JSON2 -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"></script>
+<script src="https://s3.amazonaws.com/earthfix/json2.js"></script>
+
+
+<!-- APP SCRIPTS -->
+<script src="models.js"></script>
+<script src="views.js"></script>
+<script src="router.js"></script>
+
+</head>
+<body>
+
+	<div class="btn btn-primary" id="show-value">
+		Show value!
+	</div>
+
+	<div class="row-fluid">
+		<div class="offset1">
+			<h1>SCHOOL DISTRICTS</h1>
+			<div id="district-selector"></div>
+		</div>
+		<div id="content" class="offset1">
+		</div>
+	</div>
+
+</body>
+</html>
