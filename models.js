@@ -12,7 +12,7 @@ DistrictCollection = Backbone.Collection.extend({
 alldistricts = new DistrictCollection();
 alldistricts.reset(data);
 
-console.log(alldistricts);
+//console.log(alldistricts);
 
 //console.log("Number of districts:", alldistricts.length)
 

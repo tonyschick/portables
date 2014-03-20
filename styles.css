@@ -1,0 +1,218 @@
+    .row {min-width:100% !important;}
+
+		.green {
+			color: green;
+		}
+
+		.red {
+			color: red;
+		}
+
+		 a, a:hover, a:active, a:visited {
+      color: #555555;
+    }
+    .pull-right {
+      float: right;
+    }
+
+    #header {
+      border-bottom: 3px solid #888;
+      box-shadow: 1px 2px 3px #888;
+      background-color: #eee;
+    }
+
+    .hidden {
+      visibility: none;
+    }
+
+
+    #header .content {
+      min-height: 100px;
+      margin: 0 auto;
+      width: 100%;
+      padding-left: 10%;
+
+    }
+    #header .title p {
+      font-size: 22px;
+      font-style: italic;
+      font-weight: 100;
+    }
+    #header .earthfix-logo, #header .title {
+      float: left;
+            margin-top: 14px;
+    }
+    #header .title h2 {
+      font-size: 38px;
+      font-weight: 300;
+      padding-bottom: 10px;
+      padding-top: 10px;
+    }
+    #header .title .header-coal {
+      font-weight: 500;
+    }
+    #header .earthfix-logo {
+      margin-right: 20px;
+    }
+    #story-grid {
+      margin-top: 20px;
+    }
+    #story-grid .thumbnail {
+      margin-bottom: 20px;
+    }
+    #story-grid .thumbnail-overlay-wrapper {
+      height: 0;
+      position: absolute;
+      width: 300px;
+    }
+    #story-grid .thumbnail-overlay {
+      color: #111111;
+      display: none;
+      font-size: 19px;
+      height: 100%;
+      left: -1px;
+      position: relative;
+      text-align: center;
+      top: -95px;
+      width: 300px;
+      z-index: -50;
+    }
+    .sidebar {
+      font-size: 14px;
+      line-height: 21px;
+    }
+    .story {
+      border-top: 1px solid #333333;
+      margin-top: 40px;
+      padding-bottom: 20px;
+      padding-top: 30px;
+    }
+    .video {
+      margin-bottom: 30px;
+    }
+    .map img {
+      height: 220px;
+      width: 220px;
+    }
+    .back-to-top {
+      font-size: 13px;
+      color: #666666;
+      text-decoration: none;
+      text-transform: lowercase;
+    }
+    #footer-wrapper {
+      background: none repeat scroll 0 0 #333333;
+      display: block;
+      margin-top: 60px;
+      padding-bottom: 40px;
+      padding-top: 40px;
+    }
+    #footer {
+      color: #ccc;
+      display: block;
+      margin: 0 auto;
+      width: 940px;
+    }
+    #footer h3 {
+      color: #FFFFFF;
+    }
+    #footer a {
+      color: #FFFFFF;
+    }
+    #footer .about {
+      float: left;
+      margin-right: 90px;
+      width: 650px;
+    }
+    #footer .contributors {
+      float: left;
+      width: 200px;
+    }
+    .social-buttons {
+      margin-right: -30px;
+      margin-top: 25px;
+    }
+    .social-buttons > * {
+      margin-bottom: 10px;
+    }
+    .credit-bar {
+      background: none repeat scroll 0 0 #EEEEEE;
+      display: block;
+      height: 35px;
+      width: 100%;
+    }
+    .credit-bar-inner {
+      margin: 0 auto;
+      width: 720px;
+    }
+    .credit-bar-inner a {
+      float: left;
+      line-height: 35px;
+      margin-right: 10px;
+      padding: 5px;
+      vertical-align: baseline;
+    }
+    .credit-bar-inner img {
+      vertical-align: middle;
+    }
+    
+    /* FOR D3 */
+
+    .bar {
+      fill: steelblue;
+    }
+
+    .bar:hover {
+      fill: brown;
+    }
+
+    .axis {
+      font: 10px sans-serif;
+    }
+
+    .axis path,
+    .axis line {
+      fill: none;
+      stroke: #000;
+      shape-rendering: crispEdges;
+    }
+
+    .x.axis path {
+      display: none;
+    }
+
+    .nerdbox {
+      font-size: 8pt;
+    }
+
+    .bar rect {
+    stroke: #fff;
+    shape-rendering: crispEdges;
+    }
+     
+    .bar rect.background {
+        fill: #eee;
+    }
+     
+    .bar rect.percent {
+        fill: #2ba6cb;
+    }
+     
+    .bar:hover rect.percent {
+        opacity: 0.5;
+    }
+     
+    .bar text {
+        font-size: 12px;
+        fill: #333;
+    }
+     
+    .axis line {
+        stroke: #ccc;
+        stroke-width: 1;
+    }
+     
+    line.median {
+        stroke: #777;
+        stroke-width: 1;
+    }

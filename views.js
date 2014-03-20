@@ -1,35 +1,54 @@
-
-var DistrictlistView = Backbone.View.extend({
-    //tagName: 'ul',
-    render: function(){
-        this.collection.each(function(district){
-            var districtView = new DistrictView({ model: district });
-            this.$el.append(districtView.render().el); // calling render method manually..
-        }, this);
-        return this; // returning this for chaining..
-    }
-});
+$(document).ready( function() {
 
 var DistrictView = Backbone.View.extend({
         //tagName: 'div',
+        //id: 'districtview',
         template: _.template($('#district-template').html()),
            //////////   initialize function is gone from there. So we need to call render method manually now..
         render: function(){
             this.$el.html( this.template(this.model.toJSON()));
+
             return this;  // returning this from render method..
         }
 });
 
 
 
-var SelectionView = Backbone.View.extend({
+var LeftSelectionView = Backbone.View.extend({
 	tagName: 'select',
-	id: 'select-value',
+	id: 'left-select-value',
     render: function(){
         this.collection.each(function(district){
             var selectorView = new DistrictSelectorView({ model: district });
             this.$el.append(selectorView.render().el); // calling render method manually..
         }, this);
+
+        classrooms = this.classrooms
+        portable_classrooms = this.portable_classrooms
+        five_year_portables = this.five_year_portables
+        twenty_year_portables = this.twenty_year_portables
+        new_hvac = this.new_hvac
+
+        return this; // returning this for chaining..
+    }
+
+})
+
+var RightSelectionView = Backbone.View.extend({
+	tagName: 'select',
+	id: 'right-select-value',
+    render: function(){
+        this.collection.each(function(district){
+            var selectorView = new DistrictSelectorView({ model: district });
+            this.$el.append(selectorView.render().el); // calling render method manually..
+        }, this);
+
+        classrooms = this.classrooms
+        portable_classrooms = this.portable_classrooms
+        five_year_portables = this.five_year_portables
+        twenty_year_portables = this.twenty_year_portables
+        new_hvac = this.new_hvac
+
         return this; // returning this for chaining..
     }
 
@@ -46,23 +65,56 @@ var DistrictSelectorView = Backbone.View.extend({
 
 })
 
-$(document).ready( function() {
 
-var selectorView = new SelectionView({ collection: alldistricts });
-	$('#district-selector').append(selectorView.render().el);
 
-$('#select-value').change( function() {	
-	$("#content").empty();
-	user_selection = document.getElementById('select-value').value
-	console.log(String(user_selection));
-	var districtView = new DistrictView({ model: alldistricts.get("" + user_selection)});
-	$('#content').append(districtView.render().el);
+	var left_selectorView = new LeftSelectionView({ collection: alldistricts });
+		$('#left-district-selector').append(left_selectorView.render().el);
 
-});
+	var right_selectorView = new RightSelectionView({ collection: alldistricts });
+		$('#right-district-selector').prepend("<p>Compare it with another ...</p>")
+		$('#right-district-selector').append(right_selectorView.render().el);
+
+
+	var left_districtView = new DistrictView({ model: alldistricts.get('-')});
+		$('#left-district').append(left_districtView.render().el);
+
+	var right_districtView = new DistrictView({ model: alldistricts.get('-')});
+		$('#right-district').append(right_districtView.render().el);
+
+
+
+	// function triggered on left district selection
+	$('#left-select-value').change( function() {	
+		
+		$('#left-district').empty(); //clear the div so we don't keep adding school districts
+		left_district_selection = document.getElementById('left-select-value').value
+		
+		left_portablechart(left_district_selection, 'left-district');
+
+		var left_districtView = new DistrictView({ model: alldistricts.get('' + left_district_selection)});
+		$('#left-district').append(left_districtView.render().el);
+	});
+
+	// function triggered on right district selection
+	$('#right-select-value').change( function() {
+
+		$('#right-district').empty();
+		right_district_selection = document.getElementById('right-select-value').value
+		var right_districtView = new DistrictView({ model: alldistricts.get('' + right_district_selection)});
+
+
+		$('#chart').empty()
+		right_portablechart(right_district_selection, 'right-district');
+		console.log(right_district_selection)
+		$('#right-district').append(right_districtView.render().el);
+
+	});
 
  
 
-});
+
+
+}); // end document ready function
 
 
 
