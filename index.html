@@ -9,64 +9,25 @@
 
 <!-- ############################ UNDERSCORE TEMPLATES ############################ -->
 
-<!--
-  <% portablechart((five_year_portables/portable_classrooms), (twenty_year_portables/portable_classrooms), (new_hvac/portable_classrooms))%>
--->
-
 <!-- district display -->
 <script id="district-template" type="text/underscore-template">
 
 <% if (district_name == '-') { %> 
-    <p></p>
 <% } %> 
 <% if (district_name != '-') { %>
+            
 
 
-      <% thisdiv = $(this.el)
-         console.log(thisdiv)
-         console.log(thisdiv.parentNode)
-      %>   
-      
-      <div class="row">
-        
-        
-        <div class="medium-12 columns">
 
-            <div class="row">
-                <div class="medium-11 medium-offset-1">
-                </div>
-            </div>
 
-            <div class="row">
+      <div class="large-6 columns" style="margin-top: 10px;">  
+          <p>POLICY SCORECARD</p>
 
-                <div class="medium-6 columns">
-                  <center>
-                    <h1 style="line-height: 24px;"><%= portable_classrooms %></h1>
-                    <p class="nerdbox">portable classrooms</p>
-                  </center>
-                </div>
-                
-                <div class="medium-6 columns end">
-                  <center>
-                    <h1 style="line-height: 24px;"><%= Math.round(percent_portables * 100) %>%</h1>
-                    <p class="nerdbox">of all classrooms</p>
-                  </center>
-                </div>
-
-            </div>
-
+      <div class="large-12">
+        <div class="scorecard">
+          <b>Age</b><br />
+          Does the district have policies resitricting maximum useful building life?
         </div>
-      
-      </div>
-
-
-      <div class="row" style="margin-top: 20px;">  
-          <h4 style="line-height: 16px;"><small>POLICY SCORECARD</small>
-          <br/><small style="line-height: 8px;">Does <%= district_name %> school district have policies for ...</small></h4>
-      </div>
-
-      <div class="row">
-      Maximum useful building life?
       <% if (max_life == 'Yes') { %>
           <div class="button tiny success" style="float: right;">√
           </div>
@@ -78,8 +39,11 @@
       <hr />
       </div>
 
-      <div class="row">
-      Purchasing "green" materials?
+      <div class="large-12">
+        <div class="scorecard">
+          <b>Purchasing</b><br />
+          Does it have a policy on purchasing "green" and healthy building materials?
+        </div>
       <% if (green_purchasing == 'Yes') { %>
           <div class="button tiny success" style="float: right;">√
           </div>
@@ -91,8 +55,11 @@
       <hr />
       </div>
       
-      <div class="row">
-      Ensuring adequate ventilation?
+      <div class="large-12">
+        <div class="scorecard">
+          <b>Ventilation</b><br/>
+          Does it have standards for ensuring adequate ventilation?
+        </div>
       <% if (ventilation == 'Yes') { %>
           <div class="button tiny success" style="float: right;">√
           </div>
@@ -104,8 +71,11 @@
       <hr />
       </div>
 
-      <div class="row">
-      Energy conservation?
+      <div class="large-12">
+        <div class="scorecard">
+          <b>Energy</b><br />
+          Does it have requirements for building energy conservation?
+        </div>
       <% if (energy_conservation == 'Yes') { %>
           <div class="button tiny success" style="float: right;">√
           </div>
@@ -185,13 +155,12 @@
 
             <div class="row">
             <div class="large-10 large-offset-1 columns">
-            <h4>See how Oregon and Washington's 20 biggest school districts compare in terms of portable classroom use and policies for indoor air quality and energy conservation.</h4>
             </div>
         </div>
 
         <div id="selection-wrapper" class="row">
 
-            <div class="large-3 large-offset-1 columns" id="left-district-selector"><p>Choose a school district ...</p>
+            <div class="large-3 large-offset-1 columns" id="left-district-selector"><p class="nerdbox">Choose a school district ...</p>
             </div>
 
             <div class="large-3 large-offset-2 columns end" id="right-district-selector">
@@ -201,10 +170,10 @@
 
         <div id="district-wrapper" class="row">
            
-            <div class="large-4 large-offset-1 columns" id="left-district">
+            <div class="large-5 medium-5 small-12 large-offset-1 columns" id="left-district">
             </div>
 
-            <div class="large-4 large-offset-1 columns end" id="right-district">
+            <div class="large-5 medium-5 small-12 columns end" id="right-district">
             </div>
 
 
@@ -232,7 +201,7 @@
 
 <div id="chart"></div>
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-<script src="chart.js"></script>
+<script src="charts.js"></script>
 
 <!-- 
     <ul>

@@ -16,9 +16,9 @@
     }
 
     #header {
-      border-bottom: 3px solid #888;
+      /*border-bottom: 3px solid #888;
       box-shadow: 1px 2px 3px #888;
-      background-color: #eee;
+      background-color: #fff;*/
     }
 
     .hidden {
@@ -213,6 +213,67 @@
     }
      
     line.median {
-        stroke: #777;
-        stroke-width: 1;
+        stroke: red;
+        stroke-width: 2;
     }
+
+    .oldport {
+      height: 10px;
+      width: 10px;
+      background-color: #2ba6cb;
+      float: left;
+      margin-right: .5em;
+    }
+
+    .newport {
+      height: 10px;
+      width: 10px;
+      background-color: #cdecf4 ;
+      float: left;
+      margin-right: .5em;
+    }
+
+    .otherport {
+      height: 10px;
+      width: 10px;
+      background-color: #8ed3e7;
+      float: left;
+      margin-right: .5em;
+    }
+
+    .legendtext {
+      float: left;
+      font-size: 8pt;
+      margin-right: .5em;
+    }
+
+    .scorecard {
+      font-size: 10pt;
+      width: 75%;
+      float: left;
+    }
+
+    .legend rect {
+     fill:white;
+     stroke:black;
+     opacity:0.8; 
+   }
+
+   .disclaimer {
+    color: red;
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

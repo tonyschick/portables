@@ -71,7 +71,7 @@ var DistrictSelectorView = Backbone.View.extend({
 		$('#left-district-selector').append(left_selectorView.render().el);
 
 	var right_selectorView = new RightSelectionView({ collection: alldistricts });
-		$('#right-district-selector').prepend("<p>Compare it with another ...</p>")
+		$('#right-district-selector').prepend('<p class="nerdbox">Compare it with another ...</p>')
 		$('#right-district-selector').append(right_selectorView.render().el);
 
 
@@ -101,11 +101,9 @@ var DistrictSelectorView = Backbone.View.extend({
 		$('#right-district').empty();
 		right_district_selection = document.getElementById('right-select-value').value
 		var right_districtView = new DistrictView({ model: alldistricts.get('' + right_district_selection)});
-
-
-		$('#chart').empty()
+	
 		right_portablechart(right_district_selection, 'right-district');
-		console.log(right_district_selection)
+		
 		$('#right-district').append(right_districtView.render().el);
 
 	});
