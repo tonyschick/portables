@@ -8,6 +8,13 @@ function right_portablechart(selection, location){
       , spacing = 3
       , percent = d3.format('%');
 
+
+    // ########### LINE  CHART ############
+    // 
+    
+
+
+
     // scales and axes
     var x = d3.scale.linear()
         .range([0, width])
@@ -87,8 +94,8 @@ function right_portablechart(selection, location){
         .attr('y2', y.rangeBand() - 1);
 
 
-// ############ PIE/DONUT CHART #################
-// terrible looking hack to get pie data out of the rest
+// ############ PIE/DONUT CHART ################
+// terrible looking hack to restructure the data
 piedata = data.filter(function(d){ return d.district_name == selection; })
 all_ports = piedata[0]['portable_classrooms']
 port_fives = piedata[0]['five_year_portables']
@@ -287,7 +294,7 @@ function left_portablechart(selection, location){
         .attr('y2', y.rangeBand() - 1);
 
 // ############ PIE/DONUT CHART #################
-// terrible looking hack to get pie data out of the rest
+// terrible looking hack to restructure the data
 piedata = data.filter(function(d){ return d.district_name == selection; })
 all_ports = piedata[0]['portable_classrooms']
 port_fives = piedata[0]['five_year_portables']
