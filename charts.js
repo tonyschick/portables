@@ -31,7 +31,6 @@ function right_portablechart(selection, location){
     var new_div = d3.select('#' + location)
     .append('div').attr('class', 'row')
 
-
     var chart = new_div.append('svg')
         .style('width', (width + margin.left + margin.right) + 'px')
         .append('g')

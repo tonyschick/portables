@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7 ]> <html class="ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="lt-ie10" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>twentytwenty</title>
+  <link href="twentytwenty-master/css/foundation.css" rel="stylesheet" type="text/css" />
+  <link href="twentytwenty-master/css/twentytwenty.css" rel="stylesheet" type="text/css" />
+
+  <style>
+
+  #button-one {
+    height: 10px;
+    width: 10px;
+    background-color: #fff;
+  }
+
+  .twentytwenty-before-label:before {
+  content: "TEXT TO DISPLAY ON LEFT";
+}
+
+.twentytwenty-after-label:before {
+  content: "TEXT TO DISPLAY ON RIGHT";
+}
+
+  </style>
+</head>
+  <body>
+
+    <div class="row" style="margin-top: 2em;">
+      <div class="large-4 columns">
+        <h3>Building a better portable</h3>
+        <p>A modular classroom that won't poison your kids</p>
+      </div>
+      <div class="large-8 columns">
+        <div id="container1" class="twentytwenty-container">
+        
+          <img src="old-portable.jpg" />
+          <img src="new-portable.jpg" />
+        
+        </div>
+      </div>
+    </div>
+    
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="twentytwenty-master/js/jquery.event.move.js"></script>
+    <script src="twentytwenty-master/js/jquery.twentytwenty.js"></script>
+    <script>
+    $(window).load(function(){
+
+      $("#container1").twentytwenty();
+/*
+      $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty({default_offset_pct: 0.7});
+      $(".twentytwenty-container[data-orientation='vertical']").twentytwenty({default_offset_pct: 0.3, orientation: 'vertical'});
+
+      $(".twentytwenty-before-label").append('<div id="button-one"></div>')
+*/
+    });
+    </script>
+    <script>
+    $(window).load(function(){
+
+      $(".twentytwenty-before-label").click(function() {
+          alert( "It worked!!!" );
+        });
+    
+    });
+
+
+    </script>
+
+  </body>
+</html>

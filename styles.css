@@ -1,3 +1,40 @@
+    .container {
+      background-color: #fff;
+      margin: 2%;
+    }
+
+
+    .rotate {
+
+    /* Safari */
+    -webkit-transform: rotate(-90deg);
+
+    /* Firefox */
+    -moz-transform: rotate(-90deg);
+
+    /* IE */
+    -ms-transform: rotate(-90deg);
+
+    /* Opera */
+    -o-transform: rotate(-90deg);
+
+    /* Internet Explorer */
+    filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+
+    }
+
+    /*
+    .triangle {
+
+    margin-top: 20px; 
+    height: 90px; 
+    margin-right: -25px; 
+    background-color: #656161;
+
+    }
+    */
+
+
     .row {min-width:100% !important;}
 
 		.green {
@@ -29,9 +66,6 @@
     #header .content {
       min-height: 100px;
       margin: 0 auto;
-      width: 100%;
-      padding-left: 10%;
-
     }
     #header .title p {
       font-size: 22px;
@@ -183,6 +217,11 @@
 
     .nerdbox {
       font-size: 8pt;
+    }
+
+    .teaserbox {
+      font-size: 9pt;
+      line-height: 9pt;
     }
 
     .bar rect {
